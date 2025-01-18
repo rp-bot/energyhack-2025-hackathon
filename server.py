@@ -130,16 +130,7 @@ def get_hourly_rates():
         with open('data.json', 'w') as json_file:
             json.dump(data, json_file, indent=4)
 
-        # useful_data = {
-        #     "utility": data["items"][0]["utility"],
-        #     "startdate": datetime.datetime.utcfromtimestamp(data["items"][0]["startdate"]).strftime('%Y-%m-%d %H:%M:%S'),
-        #     "energyratestructure": data["items"][0]["energyratestructure"],
-        #     "energyweekdayschedule": data["items"][0]["energyweekdayschedule"],
-        #     "energyweekendschedule": data["items"][0]["energyweekendschedule"]
-        # }
-
-        # if not hourly_rates:
-        #     return jsonify({"message": "No hourly or time-of-use rates found for this ZIP code."})
+        
 
         return jsonify(data)
 

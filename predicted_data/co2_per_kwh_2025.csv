@@ -1,0 +1,149 @@
+state-name,fuel-name,period,co2_per_kwh
+Alabama,Coal,2025,4.0342734226591603e-10
+Alabama,Natural Gas,2025,2.218475254867209e-10
+Alabama,Petroleum,2025,
+Alaska,Coal,2025,4.855240287022264e-10
+Alaska,Natural Gas,2025,2.3087799341561404e-10
+Alaska,Petroleum,2025,1.0469017785759128e-10
+Arizona,Coal,2025,9.966534018434052e-10
+Arizona,Natural Gas,2025,1.5786115497350808e-10
+Arizona,Petroleum,2025,0.0
+Arkansas,Coal,2025,4.613201239048396e-10
+Arkansas,Natural Gas,2025,1.780492252554046e-10
+Arkansas,Petroleum,2025,0.0
+California,Coal,2025,
+California,Natural Gas,2025,1.944220494101174e-10
+California,Petroleum,2025,
+Colorado,Coal,2025,4.1968027756992885e-10
+Colorado,Natural Gas,2025,1.6120821329809328e-10
+Colorado,Petroleum,2025,0.0
+Connecticut,Coal,2025,
+Connecticut,Natural Gas,2025,1.780280393312003e-10
+Connecticut,Petroleum,2025,0.0
+Delaware,Coal,2025,
+Delaware,Natural Gas,2025,3.114027492958824e-10
+Delaware,Petroleum,2025,0.0
+Florida,Coal,2025,9.49064735283567e-10
+Florida,Natural Gas,2025,1.9403897318578012e-10
+Florida,Petroleum,2025,
+Georgia,Coal,2025,6.900787612281459e-10
+Georgia,Natural Gas,2025,1.8797076984770523e-10
+Georgia,Petroleum,2025,0.0
+Hawaii,Coal,2025,3.706724711010417e-10
+Hawaii,Natural Gas,2025,
+Hawaii,Petroleum,2025,2.2499484809709518e-10
+Idaho,Natural Gas,2025,1.4679267320118873e-10
+Idaho,Petroleum,2025,0.0
+Illinois,Coal,2025,7.587662952835019e-10
+Illinois,Natural Gas,2025,1.390883653545024e-10
+Illinois,Petroleum,2025,0.0
+Indiana,Coal,2025,4.5942314676087066e-10
+Indiana,Natural Gas,2025,1.589361972987489e-10
+Indiana,Petroleum,2025,inf
+Iowa,Coal,2025,6.433466762279469e-10
+Iowa,Natural Gas,2025,1.170871695777538e-10
+Iowa,Petroleum,2025,2.8468359780750133e-10
+Kansas,Coal,2025,4.0622534395412834e-10
+Kansas,Natural Gas,2025,1.6239342580864675e-10
+Kansas,Petroleum,2025,0.0
+Kentucky,Coal,2025,5.151800579070369e-10
+Kentucky,Natural Gas,2025,1.430728148432961e-10
+Kentucky,Petroleum,2025,
+Louisiana,Coal,2025,4.311114043098298e-09
+Louisiana,Natural Gas,2025,1.664305761212715e-10
+Louisiana,Petroleum,2025,5.392421660047854e-10
+Maine,Coal,2025,2.0000907069049062e-11
+Maine,Natural Gas,2025,0.0
+Maine,Petroleum,2025,0.0
+Maryland,Coal,2025,inf
+Maryland,Natural Gas,2025,1.3837845061549112e-10
+Maryland,Petroleum,2025,0.0
+Massachusetts,Coal,2025,
+Massachusetts,Natural Gas,2025,3.102586935760075e-10
+Massachusetts,Petroleum,2025,0.0
+Michigan,Coal,2025,4.726823392822464e-10
+Michigan,Natural Gas,2025,1.4261057789970114e-10
+Michigan,Petroleum,2025,3.331026887412858e-10
+Minnesota,Coal,2025,4.131792435336331e-10
+Minnesota,Natural Gas,2025,1.6536686989991439e-10
+Minnesota,Petroleum,2025,0.0
+Mississippi,Coal,2025,2.3537711382810473e-10
+Mississippi,Natural Gas,2025,1.8243803800336857e-10
+Mississippi,Petroleum,2025,
+Missouri,Coal,2025,4.417328564257372e-10
+Missouri,Natural Gas,2025,1.7106251213691522e-10
+Missouri,Petroleum,2025,0.0
+Montana,Coal,2025,3.9645370603546647e-10
+Montana,Natural Gas,2025,1.7812374132691936e-10
+Montana,Petroleum,2025,5.238344531042355e-10
+Nebraska,Coal,2025,4.1502610694867357e-10
+Nebraska,Natural Gas,2025,1.2758018613251752e-10
+Nebraska,Petroleum,2025,1.6729602514375552e-10
+Nevada,Coal,2025,0.0
+Nevada,Natural Gas,2025,2.0809189778507531e-10
+Nevada,Petroleum,2025,0.0
+New Hampshire,Coal,2025,
+New Hampshire,Natural Gas,2025,3.057200772401903e-10
+New Hampshire,Petroleum,2025,0.0
+New Jersey,Coal,2025,
+New Jersey,Natural Gas,2025,2.214183412647184e-10
+New Jersey,Petroleum,2025,0.0
+New Mexico,Coal,2025,5.877849482861503e-10
+New Mexico,Natural Gas,2025,1.7810612350697146e-10
+New Mexico,Petroleum,2025,2.5514606198848214e-10
+New York,Coal,2025,
+New York,Natural Gas,2025,2.1246310838504194e-10
+New York,Petroleum,2025,0.0
+North Carolina,Coal,2025,1.1221387864023822e-09
+North Carolina,Natural Gas,2025,1.6096626790916684e-10
+North Carolina,Petroleum,2025,2.1630294278676534e-10
+North Dakota,Coal,2025,3.580577917752857e-10
+North Dakota,Natural Gas,2025,1.0862199101414329e-10
+North Dakota,Petroleum,2025,1.8567031462047736e-10
+Ohio,Coal,2025,5.800018437706898e-10
+Ohio,Natural Gas,2025,1.4117457222958206e-10
+Ohio,Petroleum,2025,4.61510497041219e-10
+Oklahoma,Coal,2025,inf
+Oklahoma,Natural Gas,2025,1.8511537562667878e-10
+Oklahoma,Petroleum,2025,0.0
+Oregon,Coal,2025,4.5079815404063565e-10
+Oregon,Natural Gas,2025,1.5622269080021116e-10
+Oregon,Petroleum,2025,0.0
+Pennsylvania,Coal,2025,inf
+Pennsylvania,Natural Gas,2025,1.5918011305401812e-10
+Pennsylvania,Petroleum,2025,0.0
+Rhode Island,Coal,2025,
+Rhode Island,Natural Gas,2025,1.7333607202173244e-10
+Rhode Island,Petroleum,2025,3.053920008472366e-10
+South Carolina,Coal,2025,4.942142916019773e-10
+South Carolina,Natural Gas,2025,1.850130763709287e-10
+South Carolina,Petroleum,2025,5.981087381924975e-11
+South Dakota,Coal,2025,4.3027398497230814e-10
+South Dakota,Natural Gas,2025,1.151803549283591e-10
+South Dakota,Petroleum,2025,5.408770756147794e-11
+Tennessee,Coal,2025,3.3285216608241445e-10
+Tennessee,Natural Gas,2025,1.660615574651775e-10
+Tennessee,Petroleum,2025,8.089228330219323e-11
+Texas,Coal,2025,4.940582980633931e-10
+Texas,Natural Gas,2025,1.7314516289378099e-10
+Texas,Petroleum,2025,0.0
+Utah,Coal,2025,4.1834653297736564e-10
+Utah,Natural Gas,2025,1.7920229859380404e-10
+Utah,Petroleum,2025,2.0415359462228046e-10
+Vermont,Natural Gas,2025,
+Vermont,Petroleum,2025,0.0
+Virginia,Coal,2025,
+Virginia,Natural Gas,2025,1.7279689419043897e-10
+Virginia,Petroleum,2025,0.0
+Washington,Coal,2025,2.6619930147842565e-10
+Washington,Natural Gas,2025,1.445626783725853e-10
+Washington,Petroleum,2025,0.0
+West Virginia,Coal,2025,3.7247471339590506e-10
+West Virginia,Natural Gas,2025,1.1812255656569724e-10
+West Virginia,Petroleum,2025,1.7207302722438174e-10
+Wisconsin,Coal,2025,4.1842150897512265e-10
+Wisconsin,Natural Gas,2025,1.563213741002064e-10
+Wisconsin,Petroleum,2025,4.826574364405579e-10
+Wyoming,Coal,2025,3.7446501664382514e-10
+Wyoming,Natural Gas,2025,7.856451431975589e-11
+Wyoming,Petroleum,2025,2.384113838571786e-10
