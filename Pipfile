@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 flask = "*"
 waitress = "*"
+python-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 
