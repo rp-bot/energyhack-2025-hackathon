@@ -2,6 +2,9 @@ from flask import Flask, jsonify, request
 import os
 import requests
 from dotenv import load_dotenv
+import pprint
+import json
+import datetime
 
 # Load environment variables from .env file
 load_dotenv()
@@ -27,9 +30,12 @@ def get_hourly_rates():
         "version": 3,
         "format": "json",
         "api_key": API_KEY,
-        "zip": zip_code,
-        "getpageoffset": 0,    # Start from the first result
-        "getpage": 10       # Number of results to fetch
+        "direction":"desc",
+        "limit":3,
+        "lat": 33.775620,
+        "lon":-84.396286,
+        "detail":"full"
+        
     }
 
     try:
@@ -37,25 +43,24 @@ def get_hourly_rates():
         response = requests.get(api_url, params=params)
         response.raise_for_status()
         data = response.json()
-        print(data)
-        hourly_rates = None
-        # Filter for time-of-use/hourly rates
-        # hourly_rates = [
-        #     {
-        #         "utility_name": item.get("utility_name"),
-        #         "rate_name": item.get("rate_name"),
-        #         "energyratestructure": item.get("energyratestructure"),
-        #         "energyweekdayschedule": item.get("energyweekdayschedule"),
-        #         "energyweekendschedule": item.get("energyweekendschedule"),
-        #     }
-        #     for item in data.get("items", [])
-        #     if item.get("energyratestructure") and item.get("energyweekdayschedule")
-        # ]
+        # print(data)
+        with open('data.json', 'w') as json_file:
+            json.dump(data, json_file, indent=4)
+            
+        
+        useful_data= {
+            "utility":data["items"][0]["utility"],
+            "startdate":datetime.datetime.utcfromtimestamp(data["items"][0]["startdate"]).strftime('%Y-%m-%d %H:%M:%S'),
+            "energyratestructure":data["items"][0]["energyratestructure"],
+            "energyweekdayschedule":data["items"][0]["energyweekdayschedule"],
+            "energyweekendschedule":data["items"][0]["energyweekendschedule"]
+        }
+  
 
         # if not hourly_rates:
         #     return jsonify({"message": "No hourly or time-of-use rates found for this ZIP code."})
 
-        return jsonify(hourly_rates)
+        return jsonify(useful_data)
 
     except requests.RequestException as e:
         return jsonify({"error": f"API request failed: {str(e)}"}), 500
