@@ -17,7 +17,7 @@ API_KEY_RATES = os.getenv("OPENEI_API_KEY_RATES")
 API_KEY_MIX = os.getenv("OPENEI_API_KEY_MIX")
 
 
-@app.route('/get_co2_emissions', methods=['GET'])
+# @app.route('/get_co2_emissions', methods=['GET'])
 def get_co2_emissions():
     url = "https://api.eia.gov/v2/co2-emissions/co2-emissions-aggregates/data/"
 
@@ -44,7 +44,7 @@ def get_co2_emissions():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/get_annual_mix", methods=["GET"])
+# @app.route("/get_annual_mix", methods=["GET"])
 def get_annual_consumption():
     url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/"
     params = {
@@ -116,8 +116,8 @@ def get_hourly_rates():
         "direction": "desc",
         "limit": 1,
         "sector": "Residential",
-        "lat": 33.775620,
-        "lon": -84.396286,
+        "lat": 33.8398137,
+        "lon": -84.3795589,
         "detail": "full"
     }
 
@@ -126,13 +126,17 @@ def get_hourly_rates():
         response = requests.get(api_url, params=params)
         response.raise_for_status()
         data = response.json()
-        # print(data)
-        with open('data.json', 'w') as json_file:
-            json.dump(data, json_file, indent=4)
+        items = data.get("items", [])
+        extracted_data = []
 
-        
+        for item in items:
+            extracted_data.append({
+                "energyratestructure": item.get("energyratestructure"),
+                "energyweekdayschedule": item.get("energyweekdayschedule"),
+                "energyweekendschedule": item.get("energyweekendschedule")
+            })
 
-        return jsonify(data)
+        return jsonify(extracted_data)
 
     except requests.RequestException as e:
         return jsonify({"error": f"API request failed: {str(e)}"}), 500
