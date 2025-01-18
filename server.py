@@ -44,24 +44,25 @@ def get_co2_emissions():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/get_hourly_mix", methods=["GET"])
-def get_hourly_mix():
-    url = "https://api.eia.gov/v2/electricity/rto/fuel-type-data/data/"
+@app.route("/get_annual_mix", methods=["GET"])
+def get_annual_consumption():
+    url = "https://api.eia.gov/v2/electricity/electric-power-operational-data/data/"
     params = {
-        "frequency": "hourly",
-        "data[0]": "value",
-        "facets[respondent][]": "SOCO",
-        "facets[fueltype][]": ["COL",
-                               "NG",
-                               "NUC",
-                               "OIL",
-                               "OTH",
-                               "SUN",
-                               "WND"],
-        "start": "2025-01-01T00",
-        "end": "2025-01-02T00",
+        "frequency": "annual",
+        "data[0]": "consumption-for-eg-btu",
+        "facets[fueltypeid][]": ["COL", "NG", "NUC", "PET", "SUN", "WND"],
+        "facets[location][]": [
+            "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA",
+            "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD",
+            "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH",
+            "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC",
+            "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+        ],
+        "facets[sectorid][]": ["98"],  # Specific sector filter
+        "start": "2010",
+        "end": "2024",
         "sort[0][column]": "period",
-        "sort[0][direction]": "desc",
+        "sort[0][direction]": "asc",
         "offset": 0,
         "length": 5000,
         "api_key": API_KEY_MIX
@@ -69,31 +70,28 @@ def get_hourly_mix():
 
     try:
         response = requests.get(url, params=params)
-        response.raise_for_status()  # Raise an HTTPError for bad responses
+        response.raise_for_status()
         data = response.json().get("response", {}).get("data", [])
 
-        # Group data by period and calculate fuel type mix
-        mix_by_hour = defaultdict(lambda: defaultdict(float))
+        # Group data by year and calculate fuel type consumption
+        # consumption_by_year = defaultdict(lambda: defaultdict(float))
 
-        for entry in data:
-            period = entry.get("period")
-            fuel_type = entry.get("fueltype")
-            value = float(entry.get("value", 0))
-            mix_by_hour[period][fuel_type] += value
+        with open("annual_MIX.json", "w") as f:
+            json.dump({"data": data}, f, indent=4)
 
-        # Calculate percentages and total generation
-        mix_summary = {}
-        for period, fuels in mix_by_hour.items():
-            total = sum(fuels.values())
-            mix_summary[period] = {
-                "total_generation_mwh": round(total, 2),
-                "fuel_mix_percentages": {
-                    fuel: round((value / total) * 100, 2) if total > 0 else 0
-                    for fuel, value in fuels.items()
-                }
-            }
+        # # Calculate total consumption and percentages
+        # consumption_summary = {}
+        # for period, fuels in consumption_by_year.items():
+        #     total = sum(fuels.values())
+        #     consumption_summary[period] = {
+        #         "total_consumption_btu": round(total, 2),
+        #         "fuel_consumption_percentages": {
+        #             fuel: round((value / total) * 100, 2) if total > 0 else 0
+        #             for fuel, value in fuels.items()
+        #         }
+        #     }
 
-        return jsonify({"status": "success", "mix": mix_summary})
+        return jsonify({"status": "success"})
     except requests.exceptions.HTTPError as http_err:
         return jsonify({"status": "error", "message": f"HTTP error occurred: {http_err}"}), 500
     except Exception as err:
