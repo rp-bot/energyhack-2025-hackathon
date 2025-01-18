@@ -1,0 +1,625 @@
+state-name,fuel-name,period,predicted_value
+Alabama,All Fuels,2023,46.03263601581057
+Alabama,All Fuels,2024,44.250781085968356
+Alabama,All Fuels,2025,42.4689261561266
+Alabama,Coal,2023,18.444006359684863
+Alabama,Coal,2024,15.598290088933936
+Alabama,Coal,2025,12.75257381818301
+Alabama,Natural Gas,2023,27.603616715415228
+Alabama,Natural Gas,2024,28.67564189822133
+Alabama,Natural Gas,2025,29.747667081027885
+Alabama,Petroleum,2023,0.0
+Alabama,Petroleum,2024,0.0
+Alabama,Petroleum,2025,0.0
+Alaska,All Fuels,2023,2.6874270909090896
+Alaska,All Fuels,2024,2.6595631709486156
+Alaska,All Fuels,2025,2.6316992509881416
+Alaska,Coal,2023,1.0325953359683737
+Alaska,Coal,2024,1.0535091067193605
+Alaska,Coal,2025,1.0744228774703544
+Alaska,Natural Gas,2023,1.3889056561264965
+Alaska,Natural Gas,2024,1.354861225296446
+Alaska,Natural Gas,2025,1.3208167944664098
+Alaska,Petroleum,2023,0.2659259683794488
+Alaska,Petroleum,2024,0.2511926867588947
+Alaska,Petroleum,2025,0.23645940513834063
+Arizona,All Fuels,2023,41.8301866956524
+Arizona,All Fuels,2024,41.30888677173925
+Arizona,All Fuels,2025,40.787586847826105
+Arizona,Coal,2023,22.957922146244982
+Arizona,Coal,2024,21.970346759881522
+Arizona,Coal,2025,20.982771373517835
+Arizona,Natural Gas,2023,18.864721980237164
+Arizona,Natural Gas,2024,19.335180656126454
+Arizona,Natural Gas,2025,19.805639332015744
+Arizona,Petroleum,2023,0.007542667984189677
+Arizona,Petroleum,2024,0.0033594664031628696
+Arizona,Petroleum,2025,0.0
+Arkansas,All Fuels,2023,32.38638468774707
+Arkansas,All Fuels,2024,32.595563060276675
+Arkansas,All Fuels,2025,32.80474143280634
+Arkansas,Coal,2023,23.14058529644268
+Arkansas,Coal,2024,23.018519886363634
+Arkansas,Coal,2025,22.89645447628459
+Arkansas,Natural Gas,2023,9.300649754940764
+Arkansas,Natural Gas,2024,9.645207205533552
+Arkansas,Natural Gas,2025,9.989764656126454
+Arkansas,Petroleum,2023,0.0
+Arkansas,Petroleum,2024,0.0
+Arkansas,Petroleum,2025,0.0
+California,All Fuels,2023,32.88582336363652
+California,All Fuels,2024,32.06392075988151
+California,All Fuels,2025,31.242018156126505
+California,Coal,2023,0.0
+California,Coal,2024,0.0
+California,Coal,2025,0.0
+California,Natural Gas,2023,33.96678669565222
+California,Natural Gas,2024,33.426250358695825
+California,Natural Gas,2025,32.885714021739204
+California,Petroleum,2023,0.0
+California,Petroleum,2024,0.0
+California,Petroleum,2025,0.0
+Colorado,All Fuels,2023,31.340199628458322
+Colorado,All Fuels,2024,30.80415226778632
+Colorado,All Fuels,2025,30.268104907114548
+Colorado,Coal,2023,24.197021308300464
+Colorado,Coal,2024,23.52913139920952
+Colorado,Coal,2025,22.861241490118573
+Colorado,Natural Gas,2023,7.147033059288503
+Colorado,Natural Gas,2024,7.281284216403151
+Colorado,Natural Gas,2025,7.415535373517741
+Colorado,Petroleum,2023,0.0
+Colorado,Petroleum,2024,0.0
+Colorado,Petroleum,2025,0.0
+Connecticut,All Fuels,2023,7.345098735177885
+Connecticut,All Fuels,2024,7.280929926877491
+Connecticut,All Fuels,2025,7.216761118577097
+Connecticut,Coal,2023,0.0
+Connecticut,Coal,2024,0.0
+Connecticut,Coal,2025,0.0
+Connecticut,Natural Gas,2023,9.00970076679846
+Connecticut,Natural Gas,2024,9.3265600879447
+Connecticut,Natural Gas,2025,9.643419409090939
+Connecticut,Petroleum,2023,0.0
+Connecticut,Petroleum,2024,0.0
+Connecticut,Petroleum,2025,0.0
+Delaware,All Fuels,2023,1.7021624387351721
+Delaware,All Fuels,2024,1.4936515296442394
+Delaware,All Fuels,2025,1.2851406205533067
+Delaware,Coal,2023,0.0
+Delaware,Coal,2024,0.0
+Delaware,Coal,2025,0.0
+Delaware,Natural Gas,2023,2.4550391897233226
+Delaware,Natural Gas,2024,2.535900640316214
+Delaware,Natural Gas,2025,2.6167620909091056
+Delaware,Petroleum,2023,0.0
+Delaware,Petroleum,2024,0.0
+Delaware,Petroleum,2025,0.0
+District of Columbia,All Fuels,2023,0.0
+District of Columbia,All Fuels,2024,0.0
+District of Columbia,All Fuels,2025,0.0
+District of Columbia,Coal,2023,0.0
+District of Columbia,Coal,2024,0.0
+District of Columbia,Coal,2025,0.0
+District of Columbia,Natural Gas,2023,0.002363667984189723
+District of Columbia,Natural Gas,2024,0.0023637816205533597
+District of Columbia,Natural Gas,2025,0.002363895256916996
+District of Columbia,Petroleum,2023,0.0
+District of Columbia,Petroleum,2024,0.0
+District of Columbia,Petroleum,2025,0.0
+Florida,All Fuels,2023,92.40825566007925
+Florida,All Fuels,2024,90.85755416798429
+Florida,All Fuels,2025,89.30685267588933
+Florida,Coal,2023,18.6663516877461
+Florida,Coal,2024,16.173453223319484
+Florida,Coal,2025,13.680554758892868
+Florida,Natural Gas,2023,81.33388464822201
+Florida,Natural Gas,2024,83.85627082905194
+Florida,Natural Gas,2025,86.37865700988186
+Florida,Petroleum,2023,0.0
+Florida,Petroleum,2024,0.0
+Florida,Petroleum,2025,0.0
+Georgia,All Fuels,2023,40.91226191699661
+Georgia,All Fuels,2024,38.860923627470584
+Georgia,All Fuels,2025,36.809585337944554
+Georgia,Coal,2023,14.598819466403256
+Georgia,Coal,2024,11.383659193676067
+Georgia,Coal,2025,8.168498920948878
+Georgia,Natural Gas,2023,26.312707932806006
+Georgia,Natural Gas,2024,27.489093430829598
+Georgia,Natural Gas,2025,28.665478928853645
+Georgia,Petroleum,2023,0.0007340671936759691
+Georgia,Petroleum,2024,0.0
+Georgia,Petroleum,2025,0.0
+Hawaii,All Fuels,2023,5.659782462450579
+Hawaii,All Fuels,2024,5.544358522727265
+Hawaii,All Fuels,2025,5.428934583003951
+Hawaii,Coal,2023,1.214146177865615
+Hawaii,Coal,2024,1.1977431600790567
+Hawaii,Coal,2025,1.1813401422924912
+Hawaii,Natural Gas,2023,0.0
+Hawaii,Natural Gas,2024,0.0
+Hawaii,Natural Gas,2025,0.0
+Hawaii,Petroleum,2023,4.445636762845851
+Hawaii,Petroleum,2024,4.346615884387347
+Hawaii,Petroleum,2025,4.247595005928844
+Idaho,All Fuels,2023,1.7950163913043582
+Idaho,All Fuels,2024,1.8664751847826153
+Idaho,All Fuels,2025,1.9379339782608724
+Idaho,Coal,2023,0.0
+Idaho,Coal,2024,0.0
+Idaho,Coal,2025,0.0
+Idaho,Natural Gas,2023,1.7954185573122743
+Idaho,Natural Gas,2024,1.8669337559288692
+Idaho,Natural Gas,2025,1.9384489545454642
+Idaho,Petroleum,2023,0.0
+Idaho,Petroleum,2024,0.0
+Idaho,Petroleum,2025,0.0
+Illinois,All Fuels,2023,56.20769571541496
+Illinois,All Fuels,2024,54.18372872430791
+Illinois,All Fuels,2025,52.159761733201776
+Illinois,Coal,2023,47.460633173913266
+Illinois,Coal,2024,45.11146356521749
+Illinois,Coal,2025,42.76229395652172
+Illinois,Natural Gas,2023,8.937819972332136
+Illinois,Natural Gas,2024,9.29841437944674
+Illinois,Natural Gas,2025,9.659008786561344
+Illinois,Petroleum,2023,0.0
+Illinois,Petroleum,2024,0.0
+Illinois,Petroleum,2025,0.0
+Indiana,All Fuels,2023,69.10369677865674
+Indiana,All Fuels,2024,66.35824436166058
+Indiana,All Fuels,2025,63.61279194466442
+Indiana,Coal,2023,56.32914603557401
+Indiana,Coal,2024,52.99923934288563
+Indiana,Coal,2025,49.66933265019816
+Indiana,Natural Gas,2023,12.455020581027611
+Indiana,Natural Gas,2024,13.048722846838018
+Indiana,Natural Gas,2025,13.642425112648198
+Indiana,Petroleum,2023,0.3195298814229268
+Indiana,Petroleum,2024,0.3102818715415019
+Indiana,Petroleum,2025,0.3010338616600805
+Iowa,All Fuels,2023,22.44179005138335
+Iowa,All Fuels,2024,21.616405048418756
+Iowa,All Fuels,2025,20.79102004545439
+Iowa,Coal,2023,20.09805699604749
+Iowa,Coal,2024,19.175063122529536
+Iowa,Coal,2025,18.25206924901181
+Iowa,Natural Gas,2023,2.277299916996043
+Iowa,Natural Gas,2024,2.3784674209485956
+Iowa,Natural Gas,2025,2.479634924901177
+Iowa,Petroleum,2023,0.06643285770750929
+Iowa,Petroleum,2024,0.06287419367588942
+Iowa,Petroleum,2025,0.05931552964426867
+Kansas,All Fuels,2023,20.370884399209444
+Kansas,All Fuels,2024,19.46842916798414
+Kansas,All Fuels,2025,18.565973936758837
+Kansas,Coal,2023,19.06158727668003
+Kansas,Coal,2024,18.1763769337947
+Kansas,Coal,2025,17.29116659090937
+Kansas,Natural Gas,2023,1.4001906640316228
+Kansas,Natural Gas,2024,1.4100814367588939
+Kansas,Natural Gas,2025,1.4199722094861684
+Kansas,Petroleum,2023,0.0
+Kansas,Petroleum,2024,0.0
+Kansas,Petroleum,2025,0.0
+Kentucky,All Fuels,2023,59.55643150197602
+Kentucky,All Fuels,2024,57.73389771047414
+Kentucky,All Fuels,2025,55.911363918972256
+Kentucky,Coal,2023,53.38586601976249
+Kentucky,Coal,2024,51.39576444169916
+Kentucky,Coal,2025,49.405662863635825
+Kentucky,Natural Gas,2023,6.111893019762761
+Kentucky,Natural Gas,2024,6.426786789525636
+Kentucky,Natural Gas,2025,6.741680559288511
+Kentucky,Petroleum,2023,0.05867271936756424
+Kentucky,Petroleum,2024,0.0
+Kentucky,Petroleum,2025,0.0
+Louisiana,All Fuels,2023,32.0875879090911
+Louisiana,All Fuels,2024,31.578027013834117
+Louisiana,All Fuels,2025,31.068466118577135
+Louisiana,Coal,2023,9.048457379446745
+Louisiana,Coal,2024,8.21414122628471
+Louisiana,Coal,2025,7.379825073122674
+Louisiana,Natural Gas,2023,18.22132731620559
+Louisiana,Natural Gas,2024,18.442892643280686
+Louisiana,Natural Gas,2025,18.664457970355784
+Louisiana,Petroleum,2023,4.817803675889337
+Louisiana,Petroleum,2024,4.920993623517802
+Louisiana,Petroleum,2025,5.024183571146239
+Maine,All Fuels,2023,0.13346281027668283
+Maine,All Fuels,2024,0.0
+Maine,All Fuels,2025,0.0
+Maine,Coal,2023,0.03510884584980545
+Maine,Coal,2024,0.018433843873516764
+Maine,Coal,2025,0.001758841897235186
+Maine,Natural Gas,2023,0.2313148458497949
+Maine,Natural Gas,2024,0.0913717025691767
+Maine,Natural Gas,2025,0.0
+Maine,Petroleum,2023,0.0
+Maine,Petroleum,2024,0.0
+Maine,Petroleum,2025,0.0
+Maryland,All Fuels,2023,8.310914363636584
+Maryland,All Fuels,2024,7.156684031620898
+Maryland,All Fuels,2025,6.002453699604757
+Maryland,Coal,2023,4.070148640315892
+Maryland,Coal,2024,2.8249030958495496
+Maryland,Coal,2025,1.5796575513832067
+Maryland,Natural Gas,2023,4.86730182608693
+Maryland,Natural Gas,2024,5.0801613369565075
+Maryland,Natural Gas,2025,5.293020847826085
+Maryland,Petroleum,2023,0.0
+Maryland,Petroleum,2024,0.0
+Maryland,Petroleum,2025,0.0
+Massachusetts,All Fuels,2023,3.895256225296407
+Massachusetts,All Fuels,2024,2.9287122984189864
+Massachusetts,All Fuels,2025,1.9621683715415656
+Massachusetts,Coal,2023,0.0
+Massachusetts,Coal,2024,0.0
+Massachusetts,Coal,2025,0.0
+Massachusetts,Natural Gas,2023,7.587108739130436
+Massachusetts,Natural Gas,2024,7.556466608695651
+Massachusetts,Natural Gas,2025,7.525824478260866
+Massachusetts,Petroleum,2023,0.0
+Massachusetts,Petroleum,2024,0.0
+Massachusetts,Petroleum,2025,0.0
+Michigan,All Fuels,2023,51.16217051778676
+Michigan,All Fuels,2024,49.99491936166032
+Michigan,All Fuels,2025,48.82766820553388
+Michigan,Coal,2023,34.93710820553406
+Michigan,Coal,2024,33.24771075889339
+Michigan,Coal,2025,31.558313312253176
+Michigan,Natural Gas,2023,14.885616205533552
+Michigan,Natural Gas,2024,15.36729671541491
+Michigan,Natural Gas,2025,15.84897722529638
+Michigan,Petroleum,2023,1.339446079051399
+Michigan,Petroleum,2024,1.3799118537549475
+Michigan,Petroleum,2025,1.4203776284585103
+Minnesota,All Fuels,2023,20.610224067193712
+Minnesota,All Fuels,2024,19.90209938438761
+Minnesota,All Fuels,2025,19.193974701581283
+Minnesota,Coal,2023,16.098493205533714
+Minnesota,Coal,2024,15.230817911067106
+Minnesota,Coal,2025,14.363142616600726
+Minnesota,Natural Gas,2023,4.730597411067208
+Minnesota,Natural Gas,2024,4.931352148221379
+Minnesota,Natural Gas,2025,5.132106885375492
+Minnesota,Petroleum,2023,0.0
+Minnesota,Petroleum,2024,0.0
+Minnesota,Petroleum,2025,0.0
+Mississippi,All Fuels,2023,25.045811177865613
+Mississippi,All Fuels,2024,25.057959355731224
+Mississippi,All Fuels,2025,25.07010753359684
+Mississippi,Coal,2023,3.2803889407114184
+Mississippi,Coal,2024,2.6149917183795424
+Mississippi,Coal,2025,1.949594496047439
+Mississippi,Natural Gas,2023,22.422361039525413
+Mississippi,Natural Gas,2024,23.196774839920636
+Mississippi,Natural Gas,2025,23.971188640316086
+Mississippi,Petroleum,2023,0.0
+Mississippi,Petroleum,2024,0.0
+Mississippi,Petroleum,2025,0.0
+Missouri,All Fuels,2023,61.799996624505866
+Missouri,All Fuels,2024,61.123233890316214
+Missouri,All Fuels,2025,60.446471156126336
+Missouri,Coal,2023,58.250992762845954
+Missouri,Coal,2024,57.48560363438742
+Missouri,Coal,2025,56.72021450592888
+Missouri,Natural Gas,2023,3.544370612648237
+Missouri,Natural Gas,2024,3.6453437905138344
+Missouri,Natural Gas,2025,3.7463169683794604
+Missouri,Petroleum,2023,0.004633205533597362
+Missouri,Petroleum,2024,0.0
+Missouri,Petroleum,2025,0.0
+Montana,All Fuels,2023,13.679890865612606
+Montana,All Fuels,2024,13.412489426877414
+Montana,All Fuels,2025,13.145087988142222
+Montana,Coal,2023,12.517233758893212
+Montana,Coal,2024,12.231617996047362
+Montana,Coal,2025,11.946002233201511
+Montana,Natural Gas,2023,0.39855128458497546
+Montana,Natural Gas,2024,0.417601884387345
+Montana,Natural Gas,2025,0.4366524841897217
+Montana,Petroleum,2023,0.7641057944664029
+Montana,Petroleum,2024,0.7632695237154148
+Montana,Petroleum,2025,0.7624332529644267
+Nebraska,All Fuels,2023,22.62186741897233
+Nebraska,All Fuels,2024,22.667644522727272
+Nebraska,All Fuels,2025,22.713421626482216
+Nebraska,Coal,2023,22.04593541106719
+Nebraska,Coal,2024,22.077055387351777
+Nebraska,Coal,2025,22.108175363636363
+Nebraska,Natural Gas,2023,0.5539002964426878
+Nebraska,Natural Gas,2024,0.5689340928853746
+Nebraska,Natural Gas,2025,0.5839678893280649
+Nebraska,Petroleum,2023,0.02203157312252968
+Nebraska,Petroleum,2024,0.02165489624505934
+Nebraska,Petroleum,2025,0.02127821936758889
+Nevada,All Fuels,2023,10.499046565217213
+Nevada,All Fuels,2024,9.915870771739037
+Nevada,All Fuels,2025,9.33269497826086
+Nevada,Coal,2023,0.0
+Nevada,Coal,2024,0.0
+Nevada,Coal,2025,0.0
+Nevada,Natural Gas,2023,12.081308134387314
+Nevada,Natural Gas,2024,12.309251823122509
+Nevada,Natural Gas,2025,12.537195511857703
+Nevada,Petroleum,2023,0.0
+Nevada,Petroleum,2024,0.0
+Nevada,Petroleum,2025,0.0
+New Hampshire,All Fuels,2023,1.5105468379446734
+New Hampshire,All Fuels,2024,1.2723923171936917
+New Hampshire,All Fuels,2025,1.03423779644271
+New Hampshire,Coal,2023,0.0
+New Hampshire,Coal,2024,0.0
+New Hampshire,Coal,2025,0.0
+New Hampshire,Natural Gas,2023,2.0557387826086924
+New Hampshire,Natural Gas,2024,2.0839069673913
+New Hampshire,Natural Gas,2025,2.112075152173908
+New Hampshire,Petroleum,2023,0.0
+New Hampshire,Petroleum,2024,0.0
+New Hampshire,Petroleum,2025,0.0
+New Jersey,All Fuels,2023,14.765781300395247
+New Jersey,All Fuels,2024,14.565601720355744
+New Jersey,All Fuels,2025,14.365422140316184
+New Jersey,Coal,2023,0.0
+New Jersey,Coal,2024,0.0
+New Jersey,Coal,2025,0.0
+New Jersey,Natural Gas,2023,16.31190854940712
+New Jersey,Natural Gas,2024,16.74061234881424
+New Jersey,Natural Gas,2025,17.16931614822124
+New Jersey,Petroleum,2023,0.0
+New Jersey,Petroleum,2024,0.0
+New Jersey,Petroleum,2025,0.0
+New Mexico,All Fuels,2023,18.529794596837974
+New Mexico,All Fuels,2024,17.827453291502025
+New Mexico,All Fuels,2025,17.125111986166075
+New Mexico,Coal,2023,12.86520792490137
+New Mexico,Coal,2024,12.004877969367726
+New Mexico,Coal,2025,11.144548013834083
+New Mexico,Natural Gas,2023,5.593408059288549
+New Mexico,Natural Gas,2024,5.749269901185755
+New Mexico,Natural Gas,2025,5.905131743083018
+New Mexico,Petroleum,2023,0.07117851778656181
+New Mexico,Petroleum,2024,0.07330531818181818
+New Mexico,Petroleum,2025,0.07543211857707544
+New York,All Fuels,2023,16.699212031620846
+New York,All Fuels,2024,14.963007834980544
+New York,All Fuels,2025,13.226803638340243
+New York,Coal,2023,0.0
+New York,Coal,2024,0.0
+New York,Coal,2025,0.0
+New York,Natural Gas,2023,25.895617407114628
+New York,Natural Gas,2024,26.23795706422925
+New York,Natural Gas,2025,26.58029672134387
+New York,Petroleum,2023,0.0
+New York,Petroleum,2024,0.0
+New York,Petroleum,2025,0.0
+North Carolina,All Fuels,2023,39.44382632806355
+North Carolina,All Fuels,2024,37.701235156126586
+North Carolina,All Fuels,2025,35.958643984190076
+North Carolina,Coal,2023,17.845647434782222
+North Carolina,Coal,2024,15.03243511956498
+North Carolina,Coal,2025,12.219222804347737
+North Carolina,Natural Gas,2023,21.43428183003971
+North Carolina,Natural Gas,2024,22.513212073122304
+North Carolina,Natural Gas,2025,23.592142316205354
+North Carolina,Petroleum,2023,0.16389727272727228
+North Carolina,Petroleum,2024,0.15558819762845744
+North Carolina,Petroleum,2025,0.1472791225296426
+North Dakota,All Fuels,2023,27.951445679841868
+North Dakota,All Fuels,2024,27.792014522727243
+North Dakota,All Fuels,2025,27.632583365612618
+North Dakota,Coal,2023,27.232543470355722
+North Dakota,Coal,2024,27.034051462450577
+North Dakota,Coal,2025,26.835559454545432
+North Dakota,Natural Gas,2023,0.6938540316205604
+North Dakota,Natural Gas,2024,0.7333846067193832
+North Dakota,Natural Gas,2025,0.7729151818181919
+North Dakota,Petroleum,2023,0.025048470355731323
+North Dakota,Petroleum,2024,0.024578766798419083
+North Dakota,Petroleum,2025,0.024109063241106843
+Ohio,All Fuels,2023,63.90852240316235
+Ohio,All Fuels,2024,60.56279636067211
+Ohio,All Fuels,2025,57.21707031818187
+Ohio,Coal,2023,40.15043413834064
+Ohio,Coal,2024,35.62281722233274
+Ohio,Coal,2025,31.09520030632484
+Ohio,Natural Gas,2023,21.951819055335818
+Ohio,Natural Gas,2024,23.08663902371518
+Ohio,Natural Gas,2025,24.221458992094995
+Ohio,Petroleum,2023,1.8062692648221343
+Ohio,Petroleum,2024,1.853340170948627
+Ohio,Petroleum,2025,1.9004110770751055
+Oklahoma,All Fuels,2023,28.738265881423104
+Oklahoma,All Fuels,2024,27.670950567193813
+Oklahoma,All Fuels,2025,26.603635252964523
+Oklahoma,Coal,2023,11.168084209486096
+Oklahoma,Coal,2024,9.824483995059381
+Oklahoma,Coal,2025,8.480883780632212
+Oklahoma,Natural Gas,2023,17.566513620553337
+Oklahoma,Natural Gas,2024,17.844681306324105
+Oklahoma,Natural Gas,2025,18.12284899209476
+Oklahoma,Petroleum,2023,0.003668122529643991
+Oklahoma,Petroleum,2024,0.0017853320158103259
+Oklahoma,Petroleum,2025,0.0
+Oregon,All Fuels,2023,8.553324537549408
+Oregon,All Fuels,2024,8.578315183794466
+Oregon,All Fuels,2025,8.603305830039524
+Oregon,Coal,2023,0.9966494031620527
+Oregon,Coal,2024,0.8512858932806466
+Oregon,Coal,2025,0.7059223833992405
+Oregon,Natural Gas,2023,7.566027944664086
+Oregon,Natural Gas,2024,7.738269150197652
+Oregon,Natural Gas,2025,7.910510355731276
+Oregon,Petroleum,2023,0.0
+Oregon,Petroleum,2024,0.0
+Oregon,Petroleum,2025,0.0
+Pennsylvania,All Fuels,2023,71.45737084584925
+Pennsylvania,All Fuels,2024,68.81950225691708
+Pennsylvania,All Fuels,2025,66.18163366798399
+Pennsylvania,Coal,2023,27.460941754941814
+Pennsylvania,Coal,2024,22.812784607707727
+Pennsylvania,Coal,2025,18.164627460475458
+Pennsylvania,Natural Gas,2023,44.753348106719386
+Pennsylvania,Natural Gas,2024,46.92779802865607
+Pennsylvania,Natural Gas,2025,49.102247950592755
+Pennsylvania,Petroleum,2023,0.0
+Pennsylvania,Petroleum,2024,0.0
+Pennsylvania,Petroleum,2025,0.0
+Rhode Island,All Fuels,2023,3.051257371541496
+Rhode Island,All Fuels,2024,3.0704534496047344
+Rhode Island,All Fuels,2025,3.08964952766798
+Rhode Island,Coal,2023,0.0
+Rhode Island,Coal,2024,0.0
+Rhode Island,Coal,2025,0.0
+Rhode Island,Natural Gas,2023,3.0227670830039486
+Rhode Island,Natural Gas,2024,3.0412388290513803
+Rhode Island,Natural Gas,2025,3.059710575098812
+Rhode Island,Petroleum,2023,0.028490296442687635
+Rhode Island,Petroleum,2024,0.029214625494071056
+Rhode Island,Petroleum,2025,0.029938954545454477
+South Carolina,All Fuels,2023,24.23172515810279
+South Carolina,All Fuels,2024,23.4594207618577
+South Carolina,All Fuels,2025,22.68711636561261
+South Carolina,Coal,2023,13.372094596837997
+South Carolina,Coal,2024,12.138147476284303
+South Carolina,Coal,2025,10.904200355731064
+South Carolina,Natural Gas,2023,10.813422383399143
+South Carolina,Natural Gas,2024,11.28710438636358
+South Carolina,Natural Gas,2025,11.760786389328018
+South Carolina,Petroleum,2023,0.04620811857707352
+South Carolina,Petroleum,2024,0.034168824110668794
+South Carolina,Petroleum,2025,0.02212952964426762
+South Dakota,All Fuels,2023,2.3497071225296224
+South Dakota,All Fuels,2024,2.283962766798396
+South Dakota,All Fuels,2025,2.21821841106717
+South Dakota,Coal,2023,1.8083683122529521
+South Dakota,Coal,2024,1.7214368745059119
+South Dakota,Coal,2025,1.6345054367588716
+South Dakota,Natural Gas,2023,0.5344173320158063
+South Dakota,Natural Gas,2024,0.5566060444663989
+South Dakota,Natural Gas,2025,0.5787947569169916
+South Dakota,Petroleum,2023,0.006921486166008073
+South Dakota,Petroleum,2024,0.005919852766798517
+South Dakota,Petroleum,2025,0.004918219367588961
+Tennessee,All Fuels,2023,19.48409577865641
+Tennessee,All Fuels,2024,17.651080970355906
+Tennessee,All Fuels,2025,15.818066162055402
+Tennessee,Coal,2023,13.248725280632243
+Tennessee,Coal,2024,11.106848104743221
+Tennessee,Coal,2025,8.9649709288542
+Tennessee,Natural Gas,2023,6.185916992094917
+Tennessee,Natural Gas,2024,6.504614484189801
+Tennessee,Natural Gas,2025,6.823311976284685
+Tennessee,Petroleum,2023,0.04945369169960756
+Tennessee,Petroleum,2024,0.03961857905138544
+Tennessee,Petroleum,2025,0.029783466403163317
+Texas,All Fuels,2023,192.31383290909116
+Texas,All Fuels,2024,190.30518266600802
+Texas,All Fuels,2025,188.29653242292488
+Texas,Coal,2023,103.82592112253042
+Texas,Coal,2024,101.40330350592922
+Texas,Coal,2025,98.98068588932892
+Texas,Natural Gas,2023,89.1041719683792
+Texas,Natural Gas,2024,89.64866576284567
+Texas,Natural Gas,2025,90.19315955731213
+Texas,Petroleum,2023,0.0
+Texas,Petroleum,2024,0.0
+Texas,Petroleum,2025,0.0
+United States,All Fuels,2023,1533.8076072173862
+United States,All Fuels,2024,1491.462609130438
+United States,All Fuels,2025,1449.1176110434753
+United States,Coal,2023,882.2362146165979
+United States,Coal,2024,825.8511829397175
+United States,Coal,2025,769.4661512628518
+United States,Natural Gas,2023,655.9622402332025
+United States,Natural Gas,2024,674.026831162053
+United States,Natural Gas,2025,692.0914220909108
+United States,Petroleum,2023,0.0
+United States,Petroleum,2024,0.0
+United States,Petroleum,2025,0.0
+Utah,All Fuels,2023,27.943854988142334
+Utah,All Fuels,2024,27.523566921936776
+Utah,All Fuels,2025,27.10327885573122
+Utah,Coal,2023,23.55232021739107
+Utah,Coal,2024,22.971859315217216
+Utah,Coal,2025,22.391398413043362
+Utah,Natural Gas,2023,4.370142999999985
+Utah,Natural Gas,2024,4.531104891304324
+Utah,Natural Gas,2025,4.69206678260872
+Utah,Petroleum,2023,0.02139160474308288
+Utah,Petroleum,2024,0.02060252470355728
+Utah,Petroleum,2025,0.019813444664031454
+Vermont,All Fuels,2023,0.0
+Vermont,All Fuels,2024,0.0
+Vermont,All Fuels,2025,0.0
+Vermont,Coal,2023,0.0
+Vermont,Coal,2024,0.0
+Vermont,Coal,2025,0.0
+Vermont,Natural Gas,2023,0.0
+Vermont,Natural Gas,2024,0.0
+Vermont,Natural Gas,2025,0.0
+Vermont,Petroleum,2023,0.0
+Vermont,Petroleum,2024,0.0
+Vermont,Petroleum,2025,0.0
+Virginia,All Fuels,2023,23.33974340711461
+Virginia,All Fuels,2024,22.460761259881338
+Virginia,All Fuels,2025,21.58177911264829
+Virginia,Coal,2023,0.9982515296442216
+Virginia,Coal,2024,0.0
+Virginia,Coal,2025,0.0
+Virginia,Natural Gas,2023,22.842151600790203
+Virginia,Natural Gas,2024,23.910318788537552
+Virginia,Natural Gas,2025,24.978485976284446
+Virginia,Petroleum,2023,0.0
+Virginia,Petroleum,2024,0.0
+Virginia,Petroleum,2025,0.0
+Washington,All Fuels,2023,9.48553300790519
+Washington,All Fuels,2024,9.31694771146249
+Washington,All Fuels,2025,9.14836241501979
+Washington,Coal,2023,3.9155911264822407
+Washington,Coal,2024,3.6391426877470394
+Washington,Coal,2025,3.362694249011838
+Washington,Natural Gas,2023,5.6031766205533415
+Washington,Natural Gas,2024,5.716929143280623
+Washington,Natural Gas,2025,5.830681666007877
+Washington,Petroleum,2023,0.0
+Washington,Petroleum,2024,0.0
+Washington,Petroleum,2025,0.0
+West Virginia,All Fuels,2023,53.964718106719374
+West Virginia,All Fuels,2024,52.40258874604751
+West Virginia,All Fuels,2025,50.84045938537565
+West Virginia,Coal,2023,52.93302084584957
+West Virginia,Coal,2024,51.32770448517795
+West Virginia,Coal,2025,49.72238812450587
+West Virginia,Natural Gas,2023,0.9451915019762822
+West Virginia,Natural Gas,2024,0.9922246996047477
+West Virginia,Natural Gas,2025,1.039257897233199
+West Virginia,Petroleum,2023,0.08650606324110743
+West Virginia,Petroleum,2024,0.0826598764822144
+West Virginia,Petroleum,2025,0.07881368972332048
+Wisconsin,All Fuels,2023,34.23869184189721
+Wisconsin,All Fuels,2024,33.67317105335951
+Wisconsin,All Fuels,2025,33.10765026482204
+Wisconsin,Coal,2023,25.45064457707508
+Wisconsin,Coal,2024,24.523889556324093
+Wisconsin,Coal,2025,23.597134535573105
+Wisconsin,Natural Gas,2023,8.587772596838022
+Wisconsin,Natural Gas,2024,8.963418476284573
+Wisconsin,Natural Gas,2025,9.339064355731239
+Wisconsin,Petroleum,2023,0.20027477470355493
+Wisconsin,Petroleum,2024,0.18586313636363272
+Wisconsin,Petroleum,2025,0.17145149802371407
+Wyoming,All Fuels,2023,37.38977446245053
+Wyoming,All Fuels,2024,37.00764838142288
+Wyoming,All Fuels,2025,36.62552230039523
+Wyoming,Coal,2023,37.10645256126486
+Wyoming,Coal,2024,36.713949002964455
+Wyoming,Coal,2025,36.32144544466405
+Wyoming,Natural Gas,2023,0.24800599604743567
+Wyoming,Natural Gas,2024,0.25832670948616965
+Wyoming,Natural Gas,2025,0.2686474229249036
+Wyoming,Petroleum,2023,0.0353155928853755
+Wyoming,Petroleum,2024,0.035372337944664045
+Wyoming,Petroleum,2025,0.035429083003952574

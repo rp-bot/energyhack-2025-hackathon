@@ -8,6 +8,10 @@ flask = "*"
 waitress = "*"
 python-dotenv = "*"
 requests = "*"
+pandas = "*"
+numpy = "*"
+scikit-learn = "*"
+matplotlib = "*"
 
 [dev-packages]
 
