@@ -116,7 +116,7 @@ export function DataVisualization ( { resultingData }: ParentProps )
 	} else
 	{
 		return (
-			<div>
+			<div className="md:text-center lg:text-start">
 				Currently Only Supports the Southern Company Services, Inc. (SOCO) region
 			</div>
 		);

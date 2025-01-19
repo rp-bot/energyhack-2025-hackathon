@@ -29,7 +29,7 @@ export default function Page ()
 		<>
 			<div className="flex flex-col items-start justify-center text-black h-full lg:mx-20 mx-2 ">
 				<div className="flex flex-col gap-8 lg:w-1/2  w-full lg:text-start text-center">
-					<h1 className="text-3xl font-bold">Green Time Charge</h1>
+					<h1 className="text-3xl font-bold">Green Time To Charge</h1>
 					<h2 className="text-xl">Eco-charge minimizes upstream <span className="bg-green-500 px-1 rounded-md py-[1px] text-white font-semibold">CO₂</span> emissions associated with EV charging by using historical energy MIX data and generation trends to recommend the most sustainable times to recharge your EV at your location.</h2>
 				</div>
 				<FormComponent setParentState={ setResultingData } />
