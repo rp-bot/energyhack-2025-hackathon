@@ -6,6 +6,19 @@ import pprint
 import json
 import datetime
 from collections import defaultdict
+import pandas as pd
+
+
+df = pd.read_csv("predicted_data/co2_per_kwh_2025.csv")
+
+
+fuel_mapping = {
+    'COL': 'Coal',
+    'NG': 'Natural Gas',
+    'PET': 'Petroleum',
+    'NUC': 'Nuclear',
+    'ALL': 'All Fuels',
+}
 
 # Load environment variables from .env file
 load_dotenv()
@@ -15,18 +28,105 @@ app = Flask(__name__)
 # Load API key from .env
 API_KEY_RATES = os.getenv("OPENEI_API_KEY_RATES")
 API_KEY_MIX = os.getenv("OPENEI_API_KEY_MIX")
+GOOG_API = os.getenv("GOOG_API")
 
-car_data = [
-    "TeslaModelY": 75
+car_data = {
+    "TeslaModelY": 75,
     "TeslaModel3": 60,
     "HyundaiIoniq5": 77,
     "HondaPrologue": 80,
     "FordF150Lightning": 98,
-]
+}
 
 
+@app.route("/get_hourly_mix", methods=["GET"])
+def get_hourly_mix():
+    url = "https://api.eia.gov/v2/electricity/rto/fuel-type-data/data/"
+    # Calculate start and end dates
+    end_date = datetime.datetime.now(datetime.timezone(
+        datetime.timedelta(hours=-5))) - datetime.timedelta(days=6)
+    start_date = end_date - datetime.timedelta(days=1)
+
+    params = {
+        "frequency": "hourly",
+        "data[0]": "value",
+        "facets[respondent][]": "SOCO",
+        "facets[fueltype][]": ["COL", "NG", "PET", "OIL"],
+        "start": start_date.strftime("%Y-%m-%dT%H"),
+        "end": end_date.strftime("%Y-%m-%dT%H"),
+        "sort[0][column]": "period",
+        "sort[0][direction]": "desc",
+        "offset": 0,
+        "length": 5000,
+        "api_key": API_KEY_MIX
+    }
+
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()  # Raise an HTTPError for bad responses
+        data = response.json().get("response", {}).get("data", [])
+
+        # Group data by period and calculate fuel type mix
+        mix_by_hour = defaultdict(lambda: defaultdict(float))
+
+        for entry in data:
+            period = entry.get("period")
+            fuel_type = entry.get("fueltype")
+            value = float(entry.get("value", 0))
+            mix_by_hour[period][fuel_type] += value
+
+        # Calculate percentages and total generation
+        mix_summary = []
+        for period, fuels in mix_by_hour.items():
+            total = sum(fuels.values())
+            mix_summary.append({
+                "time": period,
+                "total_generation_mwh": round(total, 2),
+                "fuel_mix_percentages": [
+                    {"fuel_type": fuel, "percentage": round(
+                        (value / total) * 100, 2) if total > 0 else 0}
+                    for fuel, value in fuels.items()
+                ]
+            })
+
+        return mix_summary
+    except requests.exceptions.HTTPError as http_err:
+        return jsonify({"status": "error", "message": f"HTTP error occurred: {http_err}"}), 500
+    except Exception as err:
+        return jsonify({"status": "error", "message": f"An error occurred: {err}"}), 500
 
 # @app.route('/get_co2_emissions', methods=['GET'])
+
+
+def get_the_least_emissions():
+    latitude = 33.749
+    longitude = -84.388
+    daily_mix = get_hourly_mix()
+    state = get_state_from_coordinates(latitude, longitude, GOOG_API)
+
+    final_mix = {}
+
+    for hourly_mix in daily_mix:
+        temp_array = []
+        for hourly_percentage in hourly_mix["fuel_mix_percentages"]:
+            fuel_type = hourly_percentage["fuel_type"]
+            try:
+                fuel_type = fuel_mapping[fuel_type]
+            except KeyError:
+                continue
+            percentage = hourly_percentage["percentage"]
+            per_hour_usage = percentage*10
+
+            state_row = df[df["state-name"] == state]
+            state_fuel_row = state_row[state_row["fuel-name"] == fuel_type]
+            co2_per_kwh = state_fuel_row["co2_per_kwh"].values[0]
+            temp_array.append(per_hour_usage*co2_per_kwh)
+
+        print(temp_array)
+        print(sum(temp_array))
+        print("")
+
+
 def get_co2_emissions():
     url = "https://api.eia.gov/v2/co2-emissions/co2-emissions-aggregates/data/"
 
@@ -88,13 +188,12 @@ def get_annual_consumption():
         with open("annual_MIX.json", "w") as f:
             json.dump({"data": data}, f, indent=4)
 
-        # # Calculate total consumption and percentages
-        # consumption_summary = {}
-        # for period, fuels in consumption_by_year.items():
+        # mix_summary = {}
+        # for period, fuels in mix_by_hour.items():
         #     total = sum(fuels.values())
-        #     consumption_summary[period] = {
-        #         "total_consumption_btu": round(total, 2),
-        #         "fuel_consumption_percentages": {
+        #     mix_summary[period] = {
+        #         "total_generation_mwh": round(total, 2),
+        #         "fuel_mix_percentages": {
         #             fuel: round((value / total) * 100, 2) if total > 0 else 0
         #             for fuel, value in fuels.items()
         #         }
@@ -112,13 +211,14 @@ def get_hourly_rates():
     # Dynamic latitude and longitude inputs with default values
     lat = request.args.get("lat", 33.8398137, type=float)
     lon = request.args.get("lon", -84.3795589, type=float)
-    
+
     car_name = request.args.get("car_name", "TeslaModel3", type=str)
-    
-    print(lat)
-    print(lon)
-    print(car_name)
-    
+    # http://localhost:5000/get_hourly_rates?lat=33.8398137&lon=-84.3795589&make=TeslaModel3
+
+    # print(lat)
+    # print(lon)
+    # print(car_name)
+
     # OpenEI API endpoint
     api_url = "https://api.openei.org/utility_rates"
 
@@ -157,5 +257,28 @@ def get_hourly_rates():
         return jsonify({"error": str(e)}), 500
 
 
+def get_state_from_coordinates(lat, lng, api_key):
+    # Base URL for Google Maps Geocoding API
+    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+
+    # Define parameters for the API request
+    params = {
+        "latlng": f"{lat},{lng}",
+        "key": api_key
+    }
+
+    # Make the API request
+    response = requests.get(base_url, params=params)
+    result = response.json()
+
+    # Parse the response to extract the state
+    if result.get("status") == "OK":
+        for component in result["results"][0]["address_components"]:
+            if "administrative_area_level_1" in component["types"]:
+                return component["long_name"]  # Return the state name
+    return "State not found"
+
+
 if __name__ == "__main__":
+    get_the_least_emissions()
     app.run(debug=True)

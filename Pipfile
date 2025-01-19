@@ -12,6 +12,9 @@ pandas = "*"
 numpy = "*"
 scikit-learn = "*"
 matplotlib = "*"
+geopandas = "*"
+shapely = "*"
+geopy = "*"
 
 [dev-packages]
 
