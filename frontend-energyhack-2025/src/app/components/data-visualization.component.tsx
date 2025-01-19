@@ -68,9 +68,13 @@ export function DataVisualization ( { resultingData }: ParentProps )
 		const maxSum = Math.max( ...formattedData.map( ( data ) => data.sum ) );
 		const minSum = Math.min( ...formattedData.map( ( data ) => data.sum ) );
 
+		console.log( formattedData );
+		const dynamicKey = JSON.stringify( resultingData.mix );
 		return (
 			<>
+
 				<AreaChart
+					key={ `AreaChart-${ dynamicKey }` }
 					width={ chartWidth }
 					height={ 400 }
 					data={ formattedData }
@@ -81,8 +85,12 @@ export function DataVisualization ( { resultingData }: ParentProps )
 						bottom: 20,
 					} }
 				>
-					<CartesianGrid strokeDasharray="3 3" />
+					<CartesianGrid
+						key={ `CartesianGrid-${ dynamicKey }` }
+						strokeDasharray="3 3"
+					/>
 					<XAxis
+						key={ `XAxis-${ dynamicKey }` }
 						dataKey="index"
 						label={ {
 							value: "Time from Now (Hours)",
@@ -91,6 +99,7 @@ export function DataVisualization ( { resultingData }: ParentProps )
 						} }
 					/>
 					<YAxis
+						key={ `YAxis-${ dynamicKey }` }
 						domain={ [ minSum, maxSum ] }
 						tickFormatter={ ( value ) => Number( value ).toExponential( 1 ) }
 						label={ {
@@ -101,9 +110,13 @@ export function DataVisualization ( { resultingData }: ParentProps )
 							dx: -10,
 						} }
 					/>
-					<Tooltip formatter={ ( value ) => Number( value ).toExponential( 2 ) } />
-					<Legend verticalAlign="top" height={ 36 } />
+					<Tooltip
+						key={ `Tooltip-${ dynamicKey }` }
+						formatter={ ( value ) => Number( value ).toExponential( 2 ) }
+					/>
+					<Legend key={ `Legend-${ dynamicKey }` } verticalAlign="top" height={ 36 } />
 					<Area
+						key={ `Area-${ dynamicKey }` }
 						type="monotone"
 						dataKey="sum"
 						name="CO2 Emissions"

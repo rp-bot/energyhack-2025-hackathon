@@ -24,6 +24,7 @@ interface ParentProps
 
 export function CarViz ( { resultingData }: ParentProps )
 {
+	const now = new Date();
 	if ( !resultingData )
 	{
 		return <h1 className="font-semibold text-center">Your EV</h1>;
@@ -31,7 +32,13 @@ export function CarViz ( { resultingData }: ParentProps )
 
 	const { car_name, state, least_co2_emissions, least_co2_range } = resultingData;
 	const car = carObject.find( ( car: { carNameID: string; } ) => car.carNameID === car_name );
-	console.log( car_name );
+	// Calculate start and end times
+	const startTime = new Date( now.getTime() + least_co2_range[ 0 ] * 60 * 60 * 1000 ); // Add least_co2_range[0] hours
+	const endTime = new Date( startTime.getTime() + 10 * 60 * 60 * 1000 ); // Add 10 hours to startTime
+
+	// Format the times as a readable string
+	const formatTime = ( date: Date ) => date.toLocaleTimeString( [], { hour: '2-digit', minute: '2-digit' } );
+
 	return (
 		<>
 			<div>
@@ -71,8 +78,10 @@ export function CarViz ( { resultingData }: ParentProps )
 					<p className="text-lg  self-center justify-self-end">
 						<strong className="text-blue-600 text-2xl">{ state }</strong>
 					</p>
-					<p className="text-lg ">
-						<strong className="">{ new Date().toLocaleTimeString() } - { new Date( Date.now() + least_co2_range[ 1 ] * 3600000 ).toLocaleTimeString() } </strong>
+					<p className="text-lg">
+						<strong className="">
+							{ `Start Time: ${ formatTime( startTime ) }, End Time: ${ formatTime( endTime ) }` }
+						</strong>
 					</p>
 				</div>
 
