@@ -14,25 +14,6 @@
 	}
 }
 
-body {
-	background: linear-gradient(135deg, #d4fc79, #96e6a1);
-	animation: gradientAnimation 10s ease infinite;
-
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-@keyframes gradientAnimation {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

@@ -7,7 +7,7 @@ export function NavBar ()
 		<>
 			<header className="w-full p-5 flex flex-row justify-center items-center gap-2">
 				<div className="bg-white rounded-full">
-					<Image src={ logo } alt={ "logo png" } width={ 300 } height={ 300 } className="w-20 h-20 object-cover" />
+					<Image src={ logo } alt={ "logo png" } width={ 300 } height={ 300 } className="w-20 h-20 object-cover" priority />
 				</div>
 				<h1 className="font-mono text-2xl font-bold text-zinc-950">
 					r3Charge
