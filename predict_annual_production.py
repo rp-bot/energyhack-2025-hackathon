@@ -67,7 +67,8 @@ def forecast_energy_production(data, start_year=2023, end_year=2025):
 predictions_df = forecast_energy_production(result_df)
 
 # Save predictions to CSV
-predictions_df.to_csv('predicted_energy_production_2023_2025.csv', index=False)
+predictions_df.to_csv(
+    'predicted_data/predicted_energy_production_2023_2025.csv', index=False)
 
 # Filter results for the year 2025
 # pred_results_df = result_df[result_df['period'] == 2025]
@@ -108,9 +109,9 @@ def plot_energy_trend(state, energy_source):
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
+    plt.savefig("predicted_data/New_york_NG.png")
 
 
 if __name__ == '__main__':
     # Example usage
-    plot_energy_trend('Arizona', 'SUN')
+    plot_energy_trend('New York', "NG")

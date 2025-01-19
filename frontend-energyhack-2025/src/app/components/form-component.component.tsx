@@ -7,13 +7,39 @@ import { carObjectSchema } from '@/lib/zodSchemas';
 import MapsAutoComplete from './maps-auto-complete.component';
 import { CustomDropDown } from './custom-drop-down.component';
 import { sendUserSelection } from '@/lib/actions';
-
+import { useState } from 'react';
+import { FaSpinner } from "react-icons/fa";
 
 type FormValues = z.infer<typeof carObjectSchema>;
 
-export function FormComponent ()
+interface MixItem
+{
+	Coal: number;
+	NaturalGas: number;
+	sum: number;
+}
+
+interface EmissionsData
+{
+	least_co2_emissions: number;
+	least_co2_range: [ number, number ]; // Tuple for the range
+	mix: MixItem[]; // Array of MixItem objects
+	state: string;
+	car_name: string;
+}
+
+interface ParentProps
+{
+
+	setParentState: React.Dispatch<React.SetStateAction<EmissionsData | null>>;
+
+}
+
+export function FormComponent ( { setParentState }: ParentProps )
 {
 	// const [ location, setLocation ] = useState<{ latitude: number | null; longitude: number | null; }>( { latitude: null, longitude: null } );
+	const [ loading, setLoading ] = useState( false );
+
 	const { control, setValue, handleSubmit, formState: { errors } } = useForm<FormValues>(
 		{
 			resolver: zodResolver( carObjectSchema ),
@@ -23,7 +49,11 @@ export function FormComponent ()
 
 	const onSubmit: SubmitHandler<FormValues> = async ( data ) =>
 	{
+		setLoading( true );
 		const result = await sendUserSelection( data );
+		setParentState( result?.result );
+		setLoading( false );
+
 	};
 
 	const handleLocationChange = ( newLocation: { latitude: number | null; longitude: number | null; } ) =>
@@ -71,7 +101,7 @@ export function FormComponent ()
 					{/* Battery Capacity */ }
 
 					<div className='py-5 w-full flex flex-col items-start justify-center'>
-						<button type="submit" className='bg-green-500 text-white p-2 rounded'>Submit</button>
+						<button type="submit" className='bg-green-500 text-white p-2 rounded mt-1'>{ loading ? <FaSpinner className='animate-spin h-full' /> : <p>Submit</p> }</button>
 					</div>
 				</div>
 				{ errors.carModel && <p className="text-red-600 text-sm">{ errors.carModel.message }</p> }

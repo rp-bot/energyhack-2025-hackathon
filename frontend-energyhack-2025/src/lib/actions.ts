@@ -15,27 +15,25 @@ export async function sendUserSelection ( carData: FormValues )
         try
         {
             // Construct query parameters from carData
-            console.log( sendUserSelectionResult.data.latitude );
-            console.log( sendUserSelectionResult.data.longitude );
             const carNameWithoutSpace = sendUserSelectionResult.data.carModel.replace( /\s+/g, "" );
-            // /get_hourly_rates?lat=34.052235&lon=-118.243683
-            console.log( `https://flask.prathamvadhulas.com/get_hourly_rates?lat=${ sendUserSelectionResult.data.latitude }&lon=${ sendUserSelectionResult.data.longitude }&car_name=${ carNameWithoutSpace }` );
-            // // Make a GET request with query parameters
-            // const response = await fetch( `https://flask.prathamvadhulas.com/get_hourly_rates?${ queryParams }`, {
-            //     method: 'GET',
-            // } );
 
-            // if ( !response.ok )
-            // {
-            //     throw new Error( `HTTP error! Status: ${ response.status }` );
-            // }
+            // Make a GET request with query parameters
+            const response = await fetch( `https://flask.prathamvadhulas.com/get_least_co2_emissions?lat=${ sendUserSelectionResult.data.latitude }&lon=${ sendUserSelectionResult.data.longitude }&car_name=${ carNameWithoutSpace }`, {
+                method: 'GET',
+            } );
 
-            // const data = await response.json(); // Parse the JSON response
+            if ( !response.ok )
+            {
+                throw new Error( `HTTP error! Status: ${ response.status }` );
+            }
 
-            // console.log( 'Response from Flask server:', data );
+            const data = await response.json(); // Parse the JSON response
 
-            // Optionally, revalidate a path or perform other operations
+
+
             revalidatePath( '/' );
+
+            return { success: true, result: data };
         } catch ( error )
         {
             console.error( 'Error while sending data to Flask server:', error );

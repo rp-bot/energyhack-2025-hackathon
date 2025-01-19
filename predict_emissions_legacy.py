@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import json
 
 # Load JSON data (Replace 'data.json' with your actual JSON file)
-with open('co2_data.json') as f:
+with open('json_data/co2_data.json') as f:
     json_data = json.load(f)
 
 # Convert JSON data to DataFrame
@@ -16,7 +16,7 @@ data['period'] = data['period'].astype(int)
 data['value'] = data['value'].astype(float)
 
 # Save the DataFrame to a CSV file for future use
-data.to_csv('co2_emissions_data.csv', index=False)
+data.to_csv('predicted_data/co2_emissions_data.csv', index=False)
 
 # Function to forecast emissions for each state and fuel type
 
@@ -50,7 +50,8 @@ def forecast_emissions(data, start_year=2023, end_year=2025):
 forecast_df = forecast_emissions(data)
 
 # Save forecast to CSV
-forecast_df.to_csv('co2_emissions_forecast_2023_2025.csv', index=False)
+forecast_df.to_csv(
+    'predicted_data/co2_emissions_forecast_2023_2025.csv', index=False)
 
 # Optional: Plot forecasts for a specific state and fuel type
 
@@ -71,9 +72,10 @@ def plot_forecast(state, fuel):
     plt.title(f'{state} - {fuel} CO2 Emissions Forecast')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.savefig('predicted_data/GeorgiaCoal.png')
+
 
 if __name__ == "__main__":
 
-# Example plot for Ohio Coal
+    # Example plot for Ohio Coal
     plot_forecast('Georgia', 'Coal')

@@ -39,7 +39,7 @@ car_data = {
 }
 
 
-@app.route("/get_hourly_mix", methods=["GET"])
+# @app.route("/get_hourly_mix", methods=["GET"])
 def get_hourly_mix():
     url = "https://api.eia.gov/v2/electricity/rto/fuel-type-data/data/"
     # Calculate start and end dates
@@ -95,19 +95,21 @@ def get_hourly_mix():
     except Exception as err:
         return jsonify({"status": "error", "message": f"An error occurred: {err}"}), 500
 
-# @app.route('/get_co2_emissions', methods=['GET'])
 
+@app.route('/get_least_co2_emissions', methods=['GET'])
+def get_least_co2_emissions():
+    latitude = request.args.get("lat", 33.8398137, type=float)
+    longitude = request.args.get("lon", -84.3798137, type=float)
 
-def get_the_least_emissions():
-    latitude = 33.749
-    longitude = -84.388
+    car_name = request.args.get("car_name", "TeslaModel3", type=str)
+
     daily_mix = get_hourly_mix()
     state = get_state_from_coordinates(latitude, longitude, GOOG_API)
-
-    final_mix = {}
+    final_mix = []
 
     for hourly_mix in daily_mix:
-        temp_array = []
+        temp_array_sums = []
+        temp_array_fuel_types = []
         for hourly_percentage in hourly_mix["fuel_mix_percentages"]:
             fuel_type = hourly_percentage["fuel_type"]
             try:
@@ -119,12 +121,37 @@ def get_the_least_emissions():
 
             state_row = df[df["state-name"] == state]
             state_fuel_row = state_row[state_row["fuel-name"] == fuel_type]
-            co2_per_kwh = state_fuel_row["co2_per_kwh"].values[0]
-            temp_array.append(per_hour_usage*co2_per_kwh)
+            try:
+                co2_per_kwh = state_fuel_row["co2_per_kwh"].values[0]
+            except IndexError:
+                continue
+            temp_array_sums.append(per_hour_usage*co2_per_kwh*1e-2)
+            temp_array_fuel_types.append(fuel_type)
 
-        print(temp_array)
-        print(sum(temp_array))
-        print("")
+        temp_dict = {}
+        for i, fuel_type in enumerate(temp_array_fuel_types):
+            temp_dict[fuel_type] = temp_array_sums[i]
+
+        temp_dict["sum"] = sum(temp_array_sums)
+
+        final_mix.append(temp_dict)
+
+        final_mix_df = pd.DataFrame(final_mix)
+
+        # Find the 10-hour moving sum for the 'sum' column
+        rolling_sums = final_mix_df['sum'].rolling(window=10).sum()
+
+        # Drop NaN values (first 9 values will be NaN due to rolling window)
+        # rolling_sums = rolling_sums.dropna()
+
+        # Find min, max, and range
+        min_sum = rolling_sums.min()
+
+        min_index = rolling_sums.idxmin()
+
+        range_of_sums = [min_index - 9, min_index]
+
+    return jsonify({"mix": final_mix, "state": state, "least_co2_emissions": min_sum, "least_co2_range": range_of_sums, "car_name": car_name})
 
 
 def get_co2_emissions():
@@ -280,5 +307,5 @@ def get_state_from_coordinates(lat, lng, api_key):
 
 
 if __name__ == "__main__":
-    get_the_least_emissions()
+    # get_the_least_emissions()
     app.run(debug=True)
