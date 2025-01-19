@@ -16,6 +16,15 @@ app = Flask(__name__)
 API_KEY_RATES = os.getenv("OPENEI_API_KEY_RATES")
 API_KEY_MIX = os.getenv("OPENEI_API_KEY_MIX")
 
+car_data = [
+    "TeslaModelY": 75
+    "TeslaModel3": 60,
+    "HyundaiIoniq5": 77,
+    "HondaPrologue": 80,
+    "FordF150Lightning": 98,
+]
+
+
 
 # @app.route('/get_co2_emissions', methods=['GET'])
 def get_co2_emissions():
@@ -100,12 +109,16 @@ def get_annual_consumption():
 
 @app.route("/get_hourly_rates", methods=["GET"])
 def get_hourly_rates():
-    # Dynamic ZIP code input with a default value
-    # zip_code = request.args.get("zip", "30332")
-
-    # Dynamic limit input with a default of 10
-    # limit = request.args.get("limit", 10)
-
+    # Dynamic latitude and longitude inputs with default values
+    lat = request.args.get("lat", 33.8398137, type=float)
+    lon = request.args.get("lon", -84.3795589, type=float)
+    
+    car_name = request.args.get("car_name", "TeslaModel3", type=str)
+    
+    print(lat)
+    print(lon)
+    print(car_name)
+    
     # OpenEI API endpoint
     api_url = "https://api.openei.org/utility_rates"
 
@@ -116,8 +129,8 @@ def get_hourly_rates():
         "direction": "desc",
         "limit": 1,
         "sector": "Residential",
-        "lat": 33.8398137,
-        "lon": -84.3795589,
+        "lat": lat,
+        "lon": lon,
         "detail": "full"
     }
 
