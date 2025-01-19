@@ -14,7 +14,7 @@ Using a decade of data from the US Energy Information Administration (EIA), incl
 
 ## Objectives
 
-- Analyze the CO2 emissions associated with electricity generation in the U.S., depending on the location.
+- Analyse the CO2 emissions associated with electricity generation in the U.S., depending on the location.
 - Forecast future emissions trends for major energy sources like coal and natural gas.
 - Provide ‘green’ charging time recommendations to the user for reducing EV charging-related emissions by optimizing charging times.
 - Create a user-friendly website to display this data efficiently, detailing the best charging start times and durations based on user input.
