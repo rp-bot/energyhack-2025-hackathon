@@ -35,7 +35,7 @@ car_data = {
     "TeslaModel3": 60,
     "HyundaiIoniq5": 77,
     "HondaPrologue": 80,
-    "FordF150Lightning": 98,
+    "FordF-150Lightning": 98,
 }
 
 
@@ -102,7 +102,7 @@ def get_least_co2_emissions():
     longitude = request.args.get("lon", -84.3798137, type=float)
 
     car_name = request.args.get("car_name", "TeslaModel3", type=str)
-
+    print(car_name)
     daily_mix = get_hourly_mix()
     state = get_state_from_coordinates(latitude, longitude, GOOG_API)
     final_mix = []
@@ -125,7 +125,9 @@ def get_least_co2_emissions():
                 co2_per_kwh = state_fuel_row["co2_per_kwh"].values[0]
             except IndexError:
                 continue
-            temp_array_sums.append(per_hour_usage*co2_per_kwh*1e-2)
+
+            
+            temp_array_sums.append(per_hour_usage*co2_per_kwh)
             temp_array_fuel_types.append(fuel_type)
 
         temp_dict = {}
