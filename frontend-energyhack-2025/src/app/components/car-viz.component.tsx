@@ -45,7 +45,7 @@ export function CarViz ( { resultingData }: ParentProps )
 
 
 				{ car && (
-					<div className="flex flex-row items-center justify-between bg-zinc-50 px-4 rounded-md">
+					<div className="flex flex-row items-center justify-between bg-zinc-50 bg-opacity-80 px-4 rounded-t-md">
 						<div className="flex flex-col justify-center items-start w-full gap-2" >
 							<h2 className="text-2xl font-semibold font-mono">{ car.carName }</h2>
 							<h2 className="text-xl font-mono ">{ car.batteryCapacity[ 0 ] } </h2>
@@ -71,7 +71,7 @@ export function CarViz ( { resultingData }: ParentProps )
 					</div>
 
 				) }
-				<div className="grid grid-cols-2 bg-zinc-100 p-4">
+				<div className="grid grid-cols-2 bg-zinc-100 p-4 rounded-b-md bg-opacity-70">
 					<p className="text-lg  self-center justify-self-start ">
 						Today: <strong className="text-green-600 text-2xl font-mono">{ least_co2_emissions.toExponential( 2 ) } <span className="font-semibold text-lg">MMT Of CO2</span></strong>
 					</p>

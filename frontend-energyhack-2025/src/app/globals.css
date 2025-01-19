@@ -14,6 +14,25 @@
 	}
 }
 
+.bgex {
+	background-color: hsla(0, 0%, 100%, 1);
+	background-image: radial-gradient(
+			at 100% 0%,
+			hsla(264, 100%, 81%, 0.27) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 18% 13%,
+			hsla(155, 100%, 74%, 0.46) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 70% 100%,
+			hsla(172, 100%, 75%, 0.52) 0px,
+			transparent 50%
+		);
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

@@ -72,58 +72,60 @@ export function DataVisualization ( { resultingData }: ParentProps )
 		const dynamicKey = JSON.stringify( resultingData.mix );
 		return (
 			<>
-
-				<AreaChart
-					key={ `AreaChart-${ dynamicKey }` }
-					width={ chartWidth }
-					height={ 400 }
-					data={ formattedData }
-					margin={ {
-						top: 10,
-						right: 30,
-						left: 30,
-						bottom: 20,
-					} }
-				>
-					<CartesianGrid
-						key={ `CartesianGrid-${ dynamicKey }` }
-						strokeDasharray="3 3"
-					/>
-					<XAxis
-						key={ `XAxis-${ dynamicKey }` }
-						dataKey="index"
-						label={ {
-							value: "Time from Now (Hours)",
-							position: "insideBottom",
-							offset: -10,
+				<div className="">
+					<AreaChart
+						key={ `AreaChart-${ dynamicKey }` }
+						width={ chartWidth }
+						height={ 400 }
+						data={ formattedData }
+						className="bg-white bg-opacity-50 rounded-md"
+						margin={ {
+							top: 10,
+							right: 30,
+							left: 30,
+							bottom: 20,
 						} }
-					/>
-					<YAxis
-						key={ `YAxis-${ dynamicKey }` }
-						domain={ [ minSum, maxSum ] }
-						tickFormatter={ ( value ) => Number( value ).toExponential( 1 ) }
-						label={ {
-							value: "CO2 Emissions (Million Metric Tons)",
-							angle: -90,
-							position: "insideLeft",
-							dy: 120,
-							dx: -10,
-						} }
-					/>
-					<Tooltip
-						key={ `Tooltip-${ dynamicKey }` }
-						formatter={ ( value ) => Number( value ).toExponential( 2 ) }
-					/>
-					<Legend key={ `Legend-${ dynamicKey }` } verticalAlign="top" height={ 36 } />
-					<Area
-						key={ `Area-${ dynamicKey }` }
-						type="monotone"
-						dataKey="sum"
-						name="CO2 Emissions"
-						stroke="#8884d8"
-						fill="#8884d8"
-					/>
-				</AreaChart>
+					>
+						<CartesianGrid
+							key={ `CartesianGrid-${ dynamicKey }` }
+							strokeDasharray="3 3"
+						/>
+						<XAxis
+							key={ `XAxis-${ dynamicKey }` }
+							dataKey="index"
+							label={ {
+								value: "Time from Now (Hours)",
+								position: "insideBottom",
+								offset: -10,
+							} }
+						/>
+						<YAxis
+							key={ `YAxis-${ dynamicKey }` }
+							domain={ [ minSum, maxSum ] }
+							tickFormatter={ ( value ) => Number( value ).toExponential( 1 ) }
+							label={ {
+								value: "CO2 Emissions (Million Metric Tons)",
+								angle: -90,
+								position: "insideLeft",
+								dy: 120,
+								dx: -10,
+							} }
+						/>
+						<Tooltip
+							key={ `Tooltip-${ dynamicKey }` }
+							formatter={ ( value ) => Number( value ).toExponential( 2 ) }
+						/>
+						<Legend key={ `Legend-${ dynamicKey }` } verticalAlign="top" height={ 36 } />
+						<Area
+							key={ `Area-${ dynamicKey }` }
+							type="monotone"
+							dataKey="sum"
+							name="CO2 Emissions"
+							stroke="#8884d8"
+							fill="#8884d8"
+						/>
+					</AreaChart>
+				</div>
 			</>
 		);
 	} else

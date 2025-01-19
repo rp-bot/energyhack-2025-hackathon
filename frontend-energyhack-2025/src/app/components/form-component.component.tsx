@@ -93,7 +93,7 @@ export function FormComponent ( { setParentState }: ParentProps )
 
 					<div className='w-full lg:py-5'>
 
-						<div className="mt-1 block w-full border rounded-md p-2 focus:outline-none">
+						<div className="mt-1 block w-full border rounded-md p-2 focus:outline-none bg-white">
 							<MapsAutoComplete onLocationChange={ handleLocationChange } />
 						</div>
 
