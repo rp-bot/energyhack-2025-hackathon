@@ -27,7 +27,7 @@ export function CustomDropDown ( {
 					onClick={ toggleDropdown }
 					className="w-full flex justify-between items-center border rounded-md p-2 bg-white shadow-sm text-gray-700"
 				>
-					<div className="flex flex-row gap-2 items-center font-bold"><FaCarSide />{ value || <p className="font-normal">Select an EV</p> }</div>
+					<div className="flex flex-row gap-2 items-center font-bold text-xl placeholder:text-xl"><FaCarSide />{ value || <p className="font-normal">Select an EV</p> }</div>
 					{ isOpen ? <FiChevronUp className="ml-2" /> : <FiChevronDown className="ml-2" /> }
 				</button>
 

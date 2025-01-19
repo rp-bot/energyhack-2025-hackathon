@@ -10,7 +10,7 @@ export function NavBar ()
 					<Image src={ logo } alt={ "logo png" } width={ 300 } height={ 300 } className="w-20 h-20 object-cover" priority />
 				</div>
 				<h1 className="font-mono text-2xl font-bold text-zinc-950">
-					r3Charge
+					Eco-charge
 				</h1>
 			</header>
 		</>

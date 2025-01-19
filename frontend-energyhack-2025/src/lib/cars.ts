@@ -33,7 +33,7 @@ export const carObject = [
     },
     {
         carName: "Ford F-150 Lightning",
-        carNameID: "FordF150Lightning",
+        carNameID: "FordF-150Lightning",
         batteryCapacity: [ "98 kWh", "131 kWh" ],
         range: { base: "230 miles", max: "300 miles" },
         power: { base: "452 hp", max: "580 hp" },

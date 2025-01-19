@@ -1,5 +1,15 @@
 "use client";
-import { XAxis, YAxis, CartesianGrid, Tooltip, AreaChart, Area, Legend } from "recharts";
+import
+{
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	AreaChart,
+	Area,
+	Legend,
+} from "recharts";
+import { useState, useEffect } from "react";
 
 interface MixItem
 {
@@ -23,21 +33,45 @@ interface ParentProps
 
 export function DataVisualization ( { resultingData }: ParentProps )
 {
+	const [ chartWidth, setChartWidth ] = useState( 500 ); // Default width
+
+	useEffect( () =>
+	{
+		// Function to update the chart width based on window size
+		const updateWidth = () =>
+		{
+			const width = window.innerWidth;
+			if ( width < 768 )
+			{
+				setChartWidth( width * 0.9 ); // Full width for small screens
+			} else
+			{
+				setChartWidth( width * 0.4 ); // Half width for larger screens
+			}
+		};
+
+		updateWidth(); // Set initial width
+		window.addEventListener( "resize", updateWidth ); // Listen for resize events
+
+		return () =>
+		{
+			window.removeEventListener( "resize", updateWidth ); // Clean up event listener
+		};
+	}, [] );
+
 	if ( resultingData )
 	{
 		const formattedData = resultingData.mix.map( ( item, index ) => ( {
-			index,          // Use the index as a key
-			sum: item.sum,  // Extract the sum value
+			index, // Use the index as a key
+			sum: item.sum, // Extract the sum value
 		} ) );
 		const maxSum = Math.max( ...formattedData.map( ( data ) => data.sum ) );
 		const minSum = Math.min( ...formattedData.map( ( data ) => data.sum ) );
 
-		// console.log( formattedData );
 		return (
 			<>
-
 				<AreaChart
-					width={ 500 }
+					width={ chartWidth }
 					height={ 400 }
 					data={ formattedData }
 					margin={ {
@@ -54,7 +88,6 @@ export function DataVisualization ( { resultingData }: ParentProps )
 							value: "Time from Now (Hours)",
 							position: "insideBottom",
 							offset: -10,
-
 						} }
 					/>
 					<YAxis
@@ -65,23 +98,27 @@ export function DataVisualization ( { resultingData }: ParentProps )
 							angle: -90,
 							position: "insideLeft",
 							dy: 120,
-							dx: -10
+							dx: -10,
 						} }
 					/>
 					<Tooltip formatter={ ( value ) => Number( value ).toExponential( 2 ) } />
 					<Legend verticalAlign="top" height={ 36 } />
-					<Area type="monotone" dataKey="sum" name="CO2 Emissions" stroke="#8884d8" fill="#8884d8" />
+					<Area
+						type="monotone"
+						dataKey="sum"
+						name="CO2 Emissions"
+						stroke="#8884d8"
+						fill="#8884d8"
+					/>
 				</AreaChart>
-
 			</>
 		);
 	} else
 	{
 		return (
 			<div>
-				We only Support the south east region of the united states. Please choose a lcoation in the SOCO region.
+				Currently Only Supports the Southern Company Services, Inc. (SOCO) region
 			</div>
 		);
 	}
-
 }

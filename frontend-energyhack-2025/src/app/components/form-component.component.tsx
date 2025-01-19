@@ -76,9 +76,9 @@ export function FormComponent ( { setParentState }: ParentProps )
 
 	return (
 		<>
-			<form onSubmit={ handleSubmit( onSubmit ) } className="flex flex-col w-3/4 justify-between py-5 ">
-				<div className='flex flex-row gap-2'>
-					<div className='w-full py-5'>
+			<form onSubmit={ handleSubmit( onSubmit ) } className="flex flex-col  w-full justify-between py-5 ">
+				<div className='flex lg:flex-row lg:gap-2 flex-col '>
+					<div className='w-full lg:py-5'>
 
 						<Controller
 							name="carModel"
@@ -91,17 +91,17 @@ export function FormComponent ( { setParentState }: ParentProps )
 
 					</div>
 
-					<div className='w-full py-5'>
+					<div className='w-full lg:py-5'>
 
 						<div className="mt-1 block w-full border rounded-md p-2 focus:outline-none">
 							<MapsAutoComplete onLocationChange={ handleLocationChange } />
 						</div>
 
 					</div>
-					{/* Battery Capacity */ }
 
-					<div className='py-5 w-full flex flex-col items-start justify-center'>
-						<button type="submit" className='bg-green-500 text-white p-2 rounded mt-1'>{ loading ? <FaSpinner className='animate-spin h-full' /> : <p>Submit</p> }</button>
+
+					<div className='lg:py-5 w-full flex flex-col lg:items-start  justify-center'>
+						<button type="submit" className='bg-green-500 text-white p-2 rounded mt-1 font-bold text-xl'>{ loading ? <FaSpinner className='animate-spin h-full' /> : <p>Submit</p> }</button>
 					</div>
 				</div>
 				{ errors.carModel && <p className="text-red-600 text-sm">{ errors.carModel.message }</p> }

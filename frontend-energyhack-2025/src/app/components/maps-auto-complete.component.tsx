@@ -45,14 +45,14 @@ export default function MapsAutoComplete ( { onLocationChange }: AutocompletePro
 	return (
 		<div className="">
 			<LoadScript googleMapsApiKey={ process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '' } libraries={ [ 'places' ] }>
-				<div className="flex flex-row items-center gap-1">
+				<div className="flex flex-row items-center gap-2 font-bold text-gray-600">
 					<IoLocationSharp />
 					<Autocomplete onLoad={ onLoad } onPlaceChanged={ onPlaceChanged }>
 
 						<input
 							type="text"
 							placeholder="Search for a location"
-							className="focus:outline-none"
+							className="focus:outline-none text-xl placeholder:text-xl "
 						/>
 					</Autocomplete>
 				</div>
