@@ -45,32 +45,37 @@ export function FormComponent ()
 
 	return (
 		<>
-			<form onSubmit={ handleSubmit( onSubmit ) } className="flex flex-row">
-				<div >
-					<label htmlFor="make" className="block text-sm font-medium text-gray-700">Make</label>
-					<Controller
-						name="carModel"
-						control={ control }
-						defaultValue=""
-						render={ ( { field } ) => (
-							<CustomDropDown value={ field.value } onChange={ field.onChange } />
-						) }
-					/>
-					{ errors.carModel && <p className="text-red-600 text-sm">{ errors.carModel.message }</p> }
-				</div>
+			<form onSubmit={ handleSubmit( onSubmit ) } className="flex flex-col w-3/4 justify-between py-5">
+				<div className='flex flex-row'>
+					<div className='w-full py-5'>
 
-				<div>
-					<label htmlFor="latitude_longitude" className="block text-sm font-medium text-gray-700">Location</label>
-					<div className="mt-1 block w-full border rounded-md p-2 focus:outline-none">
-						<MapsAutoComplete onLocationChange={ handleLocationChange } />
+						<Controller
+							name="carModel"
+							control={ control }
+							defaultValue=""
+							render={ ( { field } ) => (
+								<CustomDropDown value={ field.value } onChange={ field.onChange } />
+							) }
+						/>
+
 					</div>
-					{ errors.latitude && <p className="text-red-600 text-sm">{ errors.latitude.message }</p> }
-					{ errors.longitude && <p className="text-red-600 text-sm">{ errors.longitude.message }</p> }
-				</div>
-				{/* Battery Capacity */ }
-				
 
-				<button type="submit" className='bg-green-500 text-white'>Submit</button>
+					<div className='w-full py-5'>
+
+						<div className="mt-1 block w-full border rounded-md p-2 focus:outline-none">
+							<MapsAutoComplete onLocationChange={ handleLocationChange } />
+						</div>
+
+					</div>
+					{/* Battery Capacity */ }
+
+					<div className=' w-full flex flex-col items-center justify-center'>
+						<button type="submit" className='bg-green-500 text-white '>Submit</button>
+					</div>
+				</div>
+				{ errors.carModel && <p className="text-red-600 text-sm">{ errors.carModel.message }</p> }
+				{ errors.latitude && <p className="text-red-600 text-sm">Error Finding your Location (try again)</p> }
+				{ errors.longitude && <p className="text-red-600 text-sm">Error Finding your Location (try again)</p> }
 			</form>
 		</>
 	);

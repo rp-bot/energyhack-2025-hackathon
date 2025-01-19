@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { LoadScript, Autocomplete } from '@react-google-maps/api';
-
+import { IoLocationSharp } from "react-icons/io5";
 interface Location
 {
 	latitude: number | null;
@@ -45,8 +45,10 @@ export default function MapsAutoComplete ( { onLocationChange }: AutocompletePro
 	return (
 		<div className="">
 			<LoadScript googleMapsApiKey={ process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '' } libraries={ [ 'places' ] }>
-				<div className="">
+				<div className="flex flex-row items-center gap-1">
+					<IoLocationSharp />
 					<Autocomplete onLoad={ onLoad } onPlaceChanged={ onPlaceChanged }>
+
 						<input
 							type="text"
 							placeholder="Search for a location"
